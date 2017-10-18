@@ -19,5 +19,8 @@ chown -R $USER:$USER ~/.ssh
 /usr/bin/echo "Please save the printed private RSA key and login using:"
 /usr/bin/echo "\"ssh -i \${savedkey} root@\${ipaddress}\""
 
+#Required in AWS Lambda
+chmod 755 /var/empty/sshd
+
 # Now start ssh.
 /usr/sbin/sshd -p 5555 -D
