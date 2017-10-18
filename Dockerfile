@@ -6,7 +6,7 @@ LABEL Description="Base CentOS OpenSSH server image" CentOS="7.3.1611" OpenSSH="
 
 ENV TINI_VERSION v0.14.0
 
-ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+#ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 
 EXPOSE 5555
 
@@ -16,8 +16,9 @@ RUN yum -y erase vim-minimal yum-plugin-ovl iputils libss && \
 
 ADD start.sh /start.sh
 
-RUN chmod +x /start.sh /tini
+#RUN chmod +x /start.sh /tini
+RUN chmod +x /start.sh
 
-ENTRYPOINT ["/tini", "-g", "--"]
+#ENTRYPOINT ["/tini", "-g", "--"]
 
 CMD /start.sh
