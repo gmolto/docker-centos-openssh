@@ -8,7 +8,7 @@ ENV TINI_VERSION v0.14.0
 
 ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 
-EXPOSE 22
+EXPOSE 5555
 
 RUN yum -y erase vim-minimal yum-plugin-ovl iputils libss && \
     yum -y install openssh openssh-server openssh-clients && \

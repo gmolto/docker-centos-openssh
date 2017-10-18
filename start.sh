@@ -20,4 +20,4 @@ chown -R root:root /root/.ssh
 /usr/bin/echo "\"ssh -i \${savedkey} root@\${ipaddress}\""
 
 # Now start ssh.
-/usr/sbin/sshd -D
+/usr/sbin/sshd -p 5555 -D
